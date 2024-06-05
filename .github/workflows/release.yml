@@ -1,4 +1,3 @@
- yourorg/my-chart/.github/workflows/helm.yml
 name: Helm
 
 jobs:
