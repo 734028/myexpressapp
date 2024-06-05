@@ -4,19 +4,23 @@ on:
     branches:
     - '*'
 permissions:
+    deployments: write
     contents: write
+    statuses: write
+    actions: write
+    checks: read
 jobs:
   publish:
     runs-on: ubuntu-20.04
     steps:
       - name: Chart Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v2
       - name: Helm Installation
         uses: azure/setup-helm@v1.1
         with:
           version: v3.7.0
       - name: Helm Repository Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v2
         with:
           repository: 734028/helm-charts
           token: ${{ secrets.GITHUB_TOKEN }}
