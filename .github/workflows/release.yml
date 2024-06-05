@@ -21,7 +21,7 @@ jobs:
           fetch-depth: 0
           persist-credentials: true
           ref: main
-          path: helm-charts
+          path: Helm-Charts
       - name: Helm Package
         run: helm package helm-chart --version "0.1.0+$(git rev-parse --short "$GITHUB_SHA")" -d Helm-Charts
       - name: Helm Push
@@ -30,7 +30,6 @@ jobs:
         run: |
           git config --global user.email "anthony_klotz@baxter.com"
           git config --global user.name "734028"
-          git config --global user.password "Bax560507!"
           CHART_PACKAGE_NAME="myexpressapp-0.1.0+$(git rev-parse --short "$GITHUB_SHA").tgz"
           cd Helm-Charts
           git add "$CHART_PACKAGE_NAME"
