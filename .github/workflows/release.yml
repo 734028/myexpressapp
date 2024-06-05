@@ -9,6 +9,9 @@ permissions:
 jobs:
   publish:
     runs-on: ubuntu-20.04
+    permissions:
+      contents: write
+      pull-requests: write
     steps:
       - name: Chart Checkout
         uses: actions/checkout@v2
