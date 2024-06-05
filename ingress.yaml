@@ -1,0 +1,21 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: myingress
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /
+  labels:
+    name: myingress
+spec:
+  ingressClassName: nginx
+  rules:
+  - host: "bdhp01.local"
+    http:
+      paths:
+      - pathType: Prefix
+        path: "/myexpressapp"
+        backend:
+          service:
+            name: myexpressapp-svc
+            port: 
+              number: 80
