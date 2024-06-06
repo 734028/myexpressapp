@@ -29,6 +29,7 @@ jobs:
       - name: Helm Push
         run: |
           git config --global user.name  ${{ secrets.GT_PAT_TK }}
+          git config --global user.password "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"
           CHART_PACKAGE_NAME="myexpressapp-0.1.0+$(git rev-parse --short "$GITHUB_SHA").tgz"
           cd Helm-Charts
           git add "$CHART_PACKAGE_NAME"
