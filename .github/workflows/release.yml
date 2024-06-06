@@ -12,6 +12,8 @@ permissions:
 jobs:
   publish:
     runs-on: ubuntu-20.04
+    permissions:
+      contents: write
     steps:
       - name: Chart Checkout
         uses: actions/checkout@v2
@@ -20,7 +22,7 @@ jobs:
         with:
           version: v3.7.0
       - name: Helm Repository Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v2
         with:
           repository: 734028/helm-charts
           token: ${{ secrets.GITHUB_TOKEN }}
