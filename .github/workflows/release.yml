@@ -20,7 +20,7 @@ jobs:
         with:
           version: v3.7.0
       - name: Helm Repository Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v2
         with:
           repository: 734028/helm-charts
           token: ${{ secrets.GITHUB_TOKEN }}
@@ -35,7 +35,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           git config --global user.email "anthony_klotz@baxter.com"
-          git config --global user.name "github-actions[bot]"
+          git config --global user.name "734028"
           CHART_PACKAGE_NAME="myexpressapp-0.1.0+$(git rev-parse --short "$GITHUB_SHA").tgz"
           cd Helm-Charts
           git add "$CHART_PACKAGE_NAME"
