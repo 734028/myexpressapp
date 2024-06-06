@@ -7,9 +7,7 @@ permissions: write-all
 jobs:
   publish:
     runs-on: ubuntu-20.04
-    permissions:
-      contents: write
-      pages: write
+    permissions: write-all
     steps:
       - name: Chart Checkout
         uses: actions/checkout@v2
