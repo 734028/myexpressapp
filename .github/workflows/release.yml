@@ -3,12 +3,7 @@ on:
   push:
     branches:
     - '*'
-permissions:
-    deployments: write
-    contents: write
-    statuses: write
-    actions: write
-    checks: read
+permissions: write-all
 jobs:
   publish:
     runs-on: ubuntu-20.04
