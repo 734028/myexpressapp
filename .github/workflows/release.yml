@@ -34,8 +34,8 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git config --global user.email "anthony_klotz@baxter.com"
+          git config --global user.name "github-actions[bot]"
           CHART_PACKAGE_NAME="myexpressapp-0.1.0+$(git rev-parse --short "$GITHUB_SHA").tgz"
           cd Helm-Charts
           git add "$CHART_PACKAGE_NAME"
