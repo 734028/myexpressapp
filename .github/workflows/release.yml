@@ -28,7 +28,6 @@ jobs:
         run: helm package helm-chart --version "0.1.0+$(git rev-parse --short "$GITHUB_SHA")" -d Helm-Charts
       - name: Helm Push
         run: |
-          git config --global user.email "anthony_klotz@baxter.com"
           git config --global user.name  ${{ secrets.GT_PAT_TK }}
           CHART_PACKAGE_NAME="myexpressapp-0.1.0+$(git rev-parse --short "$GITHUB_SHA").tgz"
           cd Helm-Charts
